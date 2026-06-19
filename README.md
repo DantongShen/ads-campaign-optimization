@@ -49,9 +49,11 @@ Aggregated across all 366 daily tables (Aug 2016 to Aug 2017):
 ads-campaign-optimization/
 ├── notebooks/
 │   ├── 01_data_overview.ipynb   # schema, distributions, data quality
-│   └── 02_eda.ipynb             # traffic, device, geography, purchase behavior, campaign analysis
+│   ├── 02_eda.ipynb             # traffic, device, geography, purchase behavior, campaign analysis
+│   └── 03_funnel_analysis.ipynb # purchase funnel drop-off by device, channel, country, visitor type, and time
 ├── images/                       # saved chart outputs
-├── sql/                          # reusable SQL queries
+├── sql/
+│   └── funnel_analysis.sql       # all BigQuery queries from 03_funnel_analysis.ipynb
 ├── data/                         # gitignored, intermediate outputs
 ├── credentials/                  # gitignored, BigQuery service account key
 ├── reports/
@@ -73,12 +75,25 @@ ads-campaign-optimization/
 
 ---
 
+## Key Insights (from Funnel Analysis)
+
+- **86% of sessions never see a product page.** The biggest loss in the funnel is at discovery, not checkout. Only 1.30% of all sessions result in a purchase.
+- **Checkout friction is at Payment and Review, not the confirm button.** 26% drop off entering payment details and 29% at the review screen; only 1.4% abandon once they reach the final confirm step.
+- **Mobile converts at 4x lower rate than desktop** (0.41% vs 1.62%). The gap opens at Add to Cart and holds through checkout - a UX friction problem, not a reach problem.
+- **Referral converts best because it enters the funnel deeper and drops off less.** 29.5% of Referral sessions reach a product page vs 16.4% for Organic Search. Social drives volume (226K sessions) but 98% never click into a product.
+- **International traffic faces a checkout wall.** US converts at 3.04% vs Rest of World at 0.11% (28x gap). International users who do reach checkout drop off at 89% before completing - a signal of shipping restrictions or unsupported payment methods.
+- **Returning visitors are 22% of sessions but 61% of purchases.** They convert at 3.66% vs 0.65% for new visitors (6x gap), and their drop-off rate declines at every funnel step - the deeper they go, the more committed they become.
+- **Best time to convert: Monday and Friday, 10 AM - 2 PM Pacific.** Purchase rate peaks at 2 PM (2.02%) and weekday intent (1.35-1.49%) is nearly double weekend rates (0.81-0.96%).
+
+---
+
 ## Phases
 
+- [x] Phase 1: Project Charter (`reports/project_charter.md`)
 - [x] Phase 2: Data Overview (`01_data_overview.ipynb`)
 - [x] Phase 3: EDA (`02_eda.ipynb`)
-- [ ] Phase 4: Funnel Analysis
-- [ ] Phase 5: Campaign Performance
-- [ ] Phase 6: Budget Optimization
+- [x] Phase 4: Funnel Analysis (`03_funnel_analysis.ipynb`)
+- [ ] Phase 5: Channel & Budget Optimization (`04_budget_optimization.ipynb`)
+- [ ] Phase 6: Product Analysis (`05_product_analysis.ipynb`)
 - [ ] Phase 7: Experiment Design
 - [ ] Phase 8: Dashboard
