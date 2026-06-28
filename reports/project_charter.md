@@ -12,6 +12,7 @@ The Google Merchandise Store (store.google.com) sells branded physical merchandi
 2. **Diagnose where users drop off in the purchase funnel** - to find the highest-leverage UX fix.
 3. **Recommend a channel session reallocation** - modeling which controllable channels should receive more or less traffic, as a directional proxy for budget allocation. Actual dollar-level optimization is out of scope because spend data is not available in this dataset.
 4. **Quantify the mobile conversion gap** - and assess whether it is an audience problem or a UX problem.
+5. **Build a purchase prediction model** - use logistic regression to predict whether a session will result in a purchase, and quantify which session-level features drive conversion probability.
 
 ---
 
@@ -45,6 +46,7 @@ From the EDA, these are the open questions the remaining phases will answer:
 - Traffic, channel, and campaign performance analysis
 - Purchase funnel analysis using hit-level data (`eCommerceAction.action_type`)
 - Budget reallocation modeling (constrained optimization)
+- Purchase prediction model (logistic regression, session-level features)
 - A/B test design for one high-impact intervention
 
 **Out of scope:**
@@ -54,7 +56,7 @@ From the EDA, these are the open questions the remaining phases will answer:
 
 ---
 
-## EDA Key Findings (input to phases 4-8)
+## EDA Key Findings
 
 - **US concentration**: 40% of sessions, 94% of transactions. Canada is the only other converting market.
 - **Channel quality gap**: Referral converts at ~6.25%, Social at 0.06%. Social drives 226K sessions but only $8K revenue.

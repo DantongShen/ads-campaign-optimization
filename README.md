@@ -65,7 +65,7 @@ ads-campaign-optimization/
 │   └── source_medium_breakdown.csv     # session and revenue breakdown by source/medium
 ├── credentials/                     # gitignored, BigQuery service account key
 ├── reports/
-│   └── project_charter.md           # objectives, scope, success metrics, and phase plan
+│   └── project_charter.md           # objectives, scope, and success metrics
 └── dashboard/
 ```
 
@@ -132,6 +132,18 @@ ads-campaign-optimization/
 - **Primary metric: mobile product page view rate.** Directly measures whether the change moves users into the funnel. Guardrail metrics are desktop conversion rate and desktop revenue per session, which should be unchanged by a mobile-only intervention.
 - **At 20% MDE, only 2,372 sessions per group are needed** (4,744 total). At 570 avg daily mobile sessions, raw duration is 8.3 days, rounded up to 2 weeks to cover a full weekday/weekend cycle.
 - **Secondary metric is revenue per session, not add-to-cart or conversion rate.** Downstream UX is unchanged by the navigation intervention; add-to-cart and conversion rates for users who already reach a product page should not be expected to move.
+
+---
+
+## Recommendations
+
+- **Run the mobile navigation A/B test:** 86% of sessions never reach a product page; mobile converts at 4x lower than desktop starting from the first funnel step. The experiment is fully designed with 2,372 sessions per group and a 2-week recommended duration.
+- **Reallocate Social and Affiliates to Referral acquisition touchpoints:** Social at 0.06% conversion and Affiliates at $654 annual revenue cannot justify meaningful spend. Referral is the highest-efficiency channel (~13x Paid Search revenue coefficient); growing it means more partnerships and content placements, not simply increasing spend.
+- **Prioritize returning visitor retention:** returning visitors are 22% of sessions but 61% of purchases at 6x the conversion rate. Email, retargeting, and loyalty programs targeting returning users have a higher expected return than broad new-user acquisition.
+- **Direct incremental traffic to the top ~50 products:** these drive half of all revenue. Paid or referral traffic pointed at high-yield product pages is more efficient than broad category campaigns. Investigate Bags and Electronics product pages specifically (high traffic, ~18% view-to-cart).
+- **Leverage Google brand pricing power:** Google-branded products convert at 2x YouTube equivalents even at higher price points. Expanding the Google-branded assortment or increasing its navigation visibility has a data-supported return.
+- **Use purchase prediction scores for session targeting:** all three models reach AUC 0.98+. Rank sessions by probability score to prioritize US returning visitors with 10+ pageviews; avoid binary predictions at a 1.30% base rate.
+- **Address checkout Payment and Review friction as a follow-on:** once the top-of-funnel mobile gap is closed, these two checkout steps have the highest remaining drop-off and become the next highest-leverage opportunity.
 
 ---
 
