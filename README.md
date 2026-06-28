@@ -157,4 +157,4 @@ ads-campaign-optimization/
 - [x] Phase 6: Channel & Budget Optimization (`05_budget_optimization.ipynb`)
 - [x] Phase 7: Purchase Prediction (`06_purchase_prediction.ipynb`)
 - [x] Phase 8: Experiment Design (`07_experiment_design.ipynb`)
-- [ ] Phase 9: Dashboard
+- [x] Phase 9: Static Dashboard (`dashboard/`) — [https://ecommerce-analytics-ml.streamlit.app/](https://ecommerce-analytics-ml.streamlit.app/)
