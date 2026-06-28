@@ -2,6 +2,8 @@
 
 An end-to-end data analysis project using the Google Analytics Sample Ecommerce Dataset on BigQuery. The goal is to understand user behavior across the purchase funnel, evaluate channel performance, and produce data-driven recommendations for budget allocation and conversion improvement.
 
+**Dashboard:** [https://ecommerce-analytics-ml.streamlit.app/](https://ecommerce-analytics-ml.streamlit.app/)
+
 ---
 
 ## Dataset Overview
@@ -67,6 +69,16 @@ ads-campaign-optimization/
 ├── reports/
 │   └── project_charter.md           # objectives, scope, and success metrics
 └── dashboard/
+    ├── app.py                       # navigation entry point
+    └── pages/
+        ├── 0_Project_Overview.py    # summary, objectives, key findings, recommendations
+        ├── 1_EDA.py                 # pageview depth, purchase behavior, browser/device, geography
+        ├── 2_Traffic_and_Channel.py # channel performance, monthly trends, campaign analysis
+        ├── 3_Funnel_Analysis.py     # funnel drop-off by device, channel, country, visitor type, time
+        ├── 4_Product_Analysis.py    # revenue by category, view-to-cart, revenue per view, brand comparison
+        ├── 5_Budget_Optimization.py # diminishing returns model, scenario analysis, channel efficiency
+        ├── 6_Purchase_Prediction.py # ROC curves, feature importance, model results
+        └── 7_Experiment_Design.py   # experiment design, sample size, decision rules, post-launch guidance
 ```
 
 ---
